@@ -6,6 +6,9 @@ class Page{
         this.todo_list = Selector('body > todo-app > section > section > ul');
         this.checkbox_task1 = Selector('body > todo-app > section > section > ul > li > div > input');
         this.item_1 = Selector('body > todo-app > section > section > ul > li > div > label');
+        this.item1_list = Selector('label').withText('Walk with doggy')
+        this.destroy_button_task1 = Selector('body > todo-app > section > section > ul > li > div > button');
+        this.edit_item_1 = Selector('body > todo-app > section > section > ul > li > input')
 
         this.email_input = Selector('#email_create');
         this.createAccount_btn = Selector('#SubmitCreate');
