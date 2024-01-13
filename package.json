@@ -1,0 +1,14 @@
+{
+  "name": "testcafe_enablon_tech_task",
+  "version": "1.0.0",
+  "description": "task tech interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe run"
+  },
+  "author": "SYRP",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^3.5.0"
+  }
+}
