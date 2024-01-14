@@ -9,16 +9,8 @@ class Page{
         this.item1_list = Selector('label').withText('Walk with doggy')
         this.destroy_button_task1 = Selector('body > todo-app > section > section > ul > li > div > button');
         this.edit_item_1 = Selector('body > todo-app > section > section > ul > li > input')
+        this.clean_completed_button = Selector('footer button').withText('Clear completed')
 
-        this.email_input = Selector('#email_create');
-        this.createAccount_btn = Selector('#SubmitCreate');
-        this.firstName_input = Selector ('#customer_firstname');
-        this.lastName_input = Selector('#customer_lastname');
-        this.email_form = Selector('#email');
-        this.password_input = Selector('#passwd');
-        this.firstName_Address = Selector('#firstname');
-        this.lastName_Address = Selector('#lastname');
-        this.address = Selector ('#address1');
     }
 }
 
