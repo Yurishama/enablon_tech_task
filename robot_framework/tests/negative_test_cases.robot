@@ -81,6 +81,29 @@ test case 3: Edit a task using only blanks
 	Sleep			5s
 	Close Browser
 
+test case 4: add a task using blanks
+	Open Browser							${url_base}						chrome
+	Maximize Browser Window
+	#preconditions: have a clean page without task
+	Wait Until Page Contains Element     	${input_field}
+	Page Should Contain						${page_header_text}
+	#Validate doesn't exist a previus to do list
+	Element Should Not Be Visible     		${todo_list}
+
+	# actions/steeps add a new task
+	Input new_task   						${blanks} 
+
+	#asertions and validations
+	Element Should Be Visible				${todo_list}
+	Page Should Not Contain					${task_1}
+	Page Should Contain Checkbox			${checkbox_task1} 
+	Checkbox Should Not Be Selected			${checkbox_task1}
+	Page Should Contain Button				${destroy_button_task1}
+	Element Should Be Visible				${todo_count}
+	Page Should Contain						${todo_account_item1_text}
+	Page Should Contain			 			${todo_account_text} 
+	Close Browser
+
 
 #This keywords operates as a function. 
 #I've created a function to input task for example. 
