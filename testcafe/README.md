@@ -36,7 +36,7 @@ Negative tests
 - Run this command in terminal
 
 ```
-ddocker run -v $(pwd)/specs:/tests -v $(pwd)/resources/:/resources -it testcafe/testcafe firefox
+docker run -v $(pwd)/specs:/tests -v $(pwd)/resources/:/resources -it testcafe/testcafe firefox
 ```
 
 In case you want to run this local
