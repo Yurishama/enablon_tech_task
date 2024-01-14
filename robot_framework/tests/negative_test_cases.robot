@@ -104,6 +104,26 @@ test case 4: add a task using blanks
 	Page Should Contain			 			${todo_account_text} 
 	Close Browser
 
+test case 5: create two task using special characters and code
+	Open Browser							${url_base}						chrome
+	Maximize Browser Window
+	#preconditions: have two tasks
+	Wait Until Page Contains Element     	${input_field}
+	Page Should Contain						${page_header_text}
+	Element Should Not Be Visible     		${todo_list}
+	Input new_task   						${special_charters} 
+	Input new_task   						${nodejs_code}
+	Input new_task   						${special_charters} ${nodejs_code}
+
+	#actions/steeps
+	Select Checkbox							${checkbox_task1} 
+
+	#assertions and validationes
+	Element Should Be Visible 	    		${todo_list}
+	Page Should Contain						${special_charters} ${nodejs_code}
+	Page Should Contain Checkbox			${checkbox_task1} 
+	Element Should Be Visible				${todo_count}
+	Close Browser
 
 #This keywords operates as a function. 
 #I've created a function to input task for example. 
