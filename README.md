@@ -13,9 +13,23 @@ Basically, these tests review the main functionality of this page, which is to c
 ### Getting Started
 These tests are executed in two different frameworks:
  - [Testcafe](https://testcafe.io/) (Javascript) 
- - [Robot framework](https://robotframework.org/) (Python).
+ - [Robot framework](https://robotframework.org/) (Python)
 
 Both frameworks help to automate tests easily. Each framework is separated by folders.
+
+
+├── robot_framework
+│   ├── reports     
+│   ├── resources      
+│   └── test  
+│       ├── negative test cases
+│       └── positive test cases             
+└── testcafe    
+   ├── resources      
+   ├── screenshots  
+   └── specs  
+       ├── negative test cases
+       └── positive test cases 
 
 Inside each folder, there is a subfolder named "resources" where the object model of the page is stored. The selectors/locators for the objects with which the page interacts are referenced there, and the data used for testing is also located in that folder.
 

@@ -6,7 +6,7 @@ Library     SeleniumLibrary
 Library		OperatingSystem
 
 *** Test Cases ***
-test case 1: create more than 20 task 1024 caracteres
+test case 1: create more than 20 task with 1024 characters
 	Open Browser							${url_base}						chrome
 	Maximize Browser Window
 	#Use 'wait until an element is visible' or 'wait until the page contains'—this is better than using sleeps or waits in the code.
@@ -32,7 +32,7 @@ test case 1: create more than 20 task 1024 caracteres
 	Close Browser
 
 
-test case 2: validate edit fail
+test case 2: validate edit and fail task
 	Open Browser							${url_base}					chrome
 	Maximize Browser Window
 	#Preconditions have at least one task to edit

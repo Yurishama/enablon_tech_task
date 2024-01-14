@@ -4,7 +4,7 @@ import {data} from '../resources/data.js';
 fixture('Negativetest to do page')
     .page ('https://todomvc.com/examples/angular2/')
 
-test('Test case 1: create new tast 20 times', async t => {
+test('Test case 1: create new task 20 times', async t => {
     await t
 
         for (let i = 0; i < 20; i++) {
@@ -21,7 +21,7 @@ test('Test case 1: create new tast 20 times', async t => {
         .expect(page.destroy_button_task1.exists).ok();
 });
 
-test('Test case 2: make edit and fial', async t => {
+test('Test case 2: make edit and fail', async t => {
     await t
     .typeText(page.input_field,data.task1)
     .pressKey('enter')
@@ -54,14 +54,12 @@ test('Test case 3: edit a task using blanks', async t => {
         .expect(page.destroy_button_task1.exists).notOk();
 });
 
-test('Test case 4: create a task usin special characters and code', async t => {
+test('Test case 4: create a task using special characters and code', async t => {
     await t
         .typeText(page.input_field,data.task_special)
         .pressKey('enter')
         .typeText(page.input_field,data.task_code)
         .pressKey('enter')
-
-
 
     await t
         .expect(page.todo_list.exists).ok()

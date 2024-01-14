@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.5 on linux)" generated="20240114 19:36:46.509" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="/opt/robotframework/tests">
+<suite id="s1-s1" name="Negative Test Cases" source="/opt/robotframework/tests/negative_test_cases.robot">
+<test id="s1-s1-t1" name="test case 1: create more than 20 task with 1024 characters" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:46.623" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:47.126" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:47.127" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:46.622" endtime="20240114 19:36:47.129"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.129" endtime="20240114 19:36:47.129"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.129" endtime="20240114 19:36:47.129"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.129" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${number}</var>
+<value>20</value>
+<iter>
+<var name="${number}"/>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</iter>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</for>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>${destroy_button_task1}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:46.621" endtime="20240114 19:36:47.130">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s1-t2" name="test case 2: validate edit and fail task" line="35">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:47.131" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:47.632" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:47.633" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:47.131" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${item_1}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${None}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_2}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.635" endtime="20240114 19:36:47.635"/>
+</kw>
+<kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.635" endtime="20240114 19:36:47.635"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:47.635" endtime="20240114 19:36:47.635"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:47.131" endtime="20240114 19:36:47.635">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s1-t3" name="test case 3: Edit a task using only blanks" line="58">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:47.636" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:48.137" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:48.137" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:47.635" endtime="20240114 19:36:48.137"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${item_1}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${None}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${None}</arg>
+<arg>SPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_2}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+</kw>
+<kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:47.635" endtime="20240114 19:36:48.140">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s1-t4" name="test case 4: add a task using blanks" line="84">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:48.141" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:48.642" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:48.642" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Input new_task">
+<arg>${blanks}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>${destroy_button_task1}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${todo_account_item1_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${todo_account_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.644">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s1-t5" name="test case 5: create two task using special characters and code" line="107">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:48.645" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:49.146" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:49.146" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:48.645" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Input new_task">
+<arg>${special_charters}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Input new_task">
+<arg>${nodejs_code}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Input new_task">
+<arg>${special_charters} ${nodejs_code}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${special_charters} ${nodejs_code}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:48.644" endtime="20240114 19:36:49.148">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<status status="FAIL" starttime="20240114 19:36:46.522" endtime="20240114 19:36:49.148"/>
+</suite>
+<suite id="s1-s2" name="Positive Test Cases" source="/opt/robotframework/tests/positive_test_cases.robot">
+<test id="s1-s2-t1" name="test case 1: create a new task" line="7">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:49.152" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:49.653" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:49.653" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:49.151" endtime="20240114 19:36:49.654"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>${destroy_button_task1}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${todo_account_item1_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${todo_account_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:49.151" endtime="20240114 19:36:49.655">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s2-t2" name="test case 2: Edit a task" line="32">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:49.656" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:50.157" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:50.157" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:49.656" endtime="20240114 19:36:50.158"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.158" endtime="20240114 19:36:50.158"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.158" endtime="20240114 19:36:50.158"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${item_1}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${None}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<arg>${task_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${edit_item_1}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${task_2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>${destroy_button_task1}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:49.655" endtime="20240114 19:36:50.160">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s2-t3" name="test case 3: check item or task mark like done" line="59">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:50.161" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:50.662" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:50.662" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:50.160" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<arg>${destroy_button_task1}</arg>
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${clean_completed_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${todo_account_text}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${todo_account_item1_text}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:50.160" endtime="20240114 19:36:50.664">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s2-t4" name="test case 4: delete a task" line="85">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:50.665" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:51.166" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:51.166" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:50.665" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${destroy_button_task1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+</kw>
+<kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${todo_account_item1_text}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${todo_account_text}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:50.664" endtime="20240114 19:36:51.168">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<test id="s1-s2-t5" name="test case 5: create two task and complete just one and clean completed task" line="108">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_base}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240114 19:36:51.170" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<msg timestamp="20240114 19:36:51.671" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20240114 19:36:51.671" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</msg>
+<status status="FAIL" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${page_header_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_1}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Input new_task">
+<arg>${task_2}</arg>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${clean_completed_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_list}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>${task_1}</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${task_2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${checkbox_task1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${todo_count}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${todo_account_item1_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${todo_account_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+</kw>
+<status status="FAIL" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.673">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
+</status>
+</test>
+<status status="FAIL" starttime="20240114 19:36:49.149" endtime="20240114 19:36:51.673"/>
+</suite>
+<status status="FAIL" starttime="20240114 19:36:46.509" endtime="20240114 19:36:51.674"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="10" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="5" skip="0" id="s1-s1" name="Negative Test Cases">Tests.Negative Test Cases</stat>
+<stat pass="0" fail="5" skip="0" id="s1-s2" name="Positive Test Cases">Tests.Positive Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
