@@ -55,6 +55,33 @@ test case 2: validate edit fail
 	Page Should Not Contain Checkbox		${checkbox_task1} 
 	Close Browser
 
+test case 3: Edit a task using only blanks
+	Open Browser							${url_base}						chrome
+	Maximize Browser Window
+	#preconditions; have at lets one task
+	Wait Until Page Contains Element     	${input_field}
+	Page Should Contain						${page_header_text}
+	Element Should Not Be Visible     		${todo_list}
+	Input new_task   						${task_1}
+	
+	#actions/steeps: edit the task
+	Double Click Element					${item_1}
+	Click Element  							${edit_item_1}
+	Double Click Element					${edit_item_1}
+	Press Keys								${None}							DELETE
+	Press Keys   							${None}   						SPACE
+	#Input Text  							${edit_item_1} 					${blanks} 
+	Press Keys   							${edit_item_1}   				ENTER
+
+	# assertions and validations
+	Page Should Not Contain					${task_2}
+	Page Should Not Contain					${task_1}
+	Page Should Not Contain Checkbox		${checkbox_task1} 
+	Element Should Not Be Visible     		${todo_list}
+	Sleep			5s
+	Close Browser
+
+
 #This keywords operates as a function. 
 #I've created a function to input task for example. 
 # I believe that incorporating functions in your tests can enhance the clarity of your code
