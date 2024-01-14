@@ -82,6 +82,53 @@ test case 3: check item or task mark like done
 	Page Should Not Contain					${todo_account_item1_text}
 	Close Browser	
 
+test case 4: delete a task
+	Open Browser							${url_base}						chrome
+	Maximize Browser Window
+	#preconditions: have at leats one task
+	Wait Until Page Contains Element     	${input_field}
+	Page Should Contain						${page_header_text}
+	Element Should Not Be Visible     		${todo_list}
+	Input new_task   						${task_1}
+
+	# acctions/steeps: delete the task using the button to delete
+	Mouse Over								${todo_list}
+	Click Element							${destroy_button_task1}
+
+	#assertions and validations
+	Element Should Not Be Visible     		${todo_list}
+	Page Should Not Contain					${task_1}
+	Page Should Not Contain Checkbox		${checkbox_task1} 
+	Element Should Not Be Visible			${todo_count}
+	Page Should Not Contain					${todo_account_item1_text}
+	Page Should Not Contain			 		${todo_account_text} 
+	Close Browser
+
+
+test case 5: create two task and complete just one and clean completed task
+	Open Browser							${url_base}						chrome
+	Maximize Browser Window
+	#preconditions: have two tasks
+	Wait Until Page Contains Element     	${input_field}
+	Page Should Contain						${page_header_text}
+	Element Should Not Be Visible     		${todo_list}
+	Input new_task   						${task_1}
+	Input new_task   						${task_2}
+
+	#actions/steeps
+	Select Checkbox							${checkbox_task1} 
+	Click Element							${clean_completed_button}
+
+	#assertions and validationes
+	Element Should Be Visible 	    		${todo_list}
+	Page Should Not Contain					${task_1}
+	Page Should Contain						${task_2}
+	Page Should Contain Checkbox			${checkbox_task1} 
+	Element Should Be Visible				${todo_count}
+	Page Should Contain						${todo_account_item1_text}
+	Page Should Contain			 			${todo_account_text} 
+
+
 #This keywords operates as a function. 
 #I've created a function to input task for example. 
 # I believe that incorporating functions in your tests can enhance the clarity of your code
