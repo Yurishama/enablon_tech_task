@@ -15,7 +15,7 @@ test case 1: create a new task
 	#Validate doesn't exist a previus to do list
 	Element Should Not Be Visible     		${todo_list}
 
-	# actions/steeps add a new task
+	# actions/steps add a new task
 	Input new_task   						${task_1}
 
 	#asertions and validations
@@ -27,7 +27,7 @@ test case 1: create a new task
 	Element Should Be Visible				${todo_count}
 	Page Should Contain						${todo_account_item1_text}
 	Page Should Contain			 			${todo_account_text} 
-    Close Browser
+	Close Browser
 
 test case 2: Edit a task
 	Open Browser							${url_base}						chrome
@@ -38,7 +38,7 @@ test case 2: Edit a task
 	Element Should Not Be Visible     		${todo_list}
 	Input new_task   						${task_1}
 	
-	#actions/steeps: edit the task
+	#actions/steps: edit the task
 	Double Click Element					${item_1}
 	Click Element  							${edit_item_1}
 	Double Click Element					${edit_item_1}
@@ -56,7 +56,7 @@ test case 2: Edit a task
 	Element Should Be Visible				${todo_count}
 	Close Browser
 
-test case 3: check item or task mark like done
+test case 3: check item or task and mark done
 	Open Browser							${url_base}						chrome
 	Maximize Browser Window
 	#preconditions: have at leats one task to check
@@ -68,8 +68,9 @@ test case 3: check item or task mark like done
 	Page Should Contain						${task_1}
 	Page Should Contain Checkbox			${checkbox_task1} 
 
-	# acctions/steeps: check the task
+	# acctions/steps: check the task
 	Select Checkbox							${checkbox_task1} 
+
 	#assertions and validations
 	#Some elements change like text "item or items lef" after click checkbox
 	Page Should Contain Checkbox			${checkbox_task1} 
@@ -91,7 +92,7 @@ test case 4: delete a task
 	Element Should Not Be Visible     		${todo_list}
 	Input new_task   						${task_1}
 
-	# acctions/steeps: delete the task using the button to delete
+	# acctions/steps: delete the task using the button to delete
 	Mouse Over								${todo_list}
 	Click Element							${destroy_button_task1}
 
@@ -115,7 +116,7 @@ test case 5: create two task and complete just one and clean completed task
 	Input new_task   						${task_1}
 	Input new_task   						${task_2}
 
-	#actions/steeps
+	#actions/steps
 	Select Checkbox							${checkbox_task1} 
 	Click Element							${clean_completed_button}
 
@@ -137,3 +138,4 @@ Input new_task
 	[Arguments]				${task_1}
 	Input Text     			${input_field}    	${task_1}
 	Press Keys   			${input_field}   	ENTER
+

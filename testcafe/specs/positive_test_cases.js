@@ -18,7 +18,7 @@ test('Test case 1: create a new task', async t => {
         .expect(page.destroy_button_task1.exists).ok();
 });
 
-test('Test case 2: modificar a task', async t => {
+test('Test case 2: edit task', async t => {
     await t
         .typeText(page.input_field,data.task1)
         .pressKey('enter')
@@ -37,7 +37,7 @@ test('Test case 2: modificar a task', async t => {
         .expect(page.destroy_button_task1.exists).ok();
 });
 
-test('Test case 3: check task', async t => {
+test('Test case 3: check task and mark as done', async t => {
     await t
         .typeText(page.input_field,data.task1)
         .pressKey('enter')

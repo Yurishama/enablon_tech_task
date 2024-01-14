@@ -1,25 +1,22 @@
-
-
 *** Settings ***
 Resource    ${CURDIR}/../resources/page_object_model.robot
 Library     SeleniumLibrary
 Library		OperatingSystem
 
 *** Test Cases ***
-test case 1: create more than 20 task 1024 caracteres
+test case 1: create more than 20 task with 1024 characters
 	Open Browser							${url_base}						chrome
 	Maximize Browser Window
-	#Use 'wait until an element is visible' or 'wait until the page contains'—this is better than using sleeps or waits in the code.
-
+	#Use wait until an element is visible or wait until the page contains this is better than using sleeps or waits in the code.
 	#preconditions: have a clean page without task
 	Wait Until Page Contains Element     	${input_field}
 	Page Should Contain						${page_header_text}
 	#Validate doesn't exist a previus to do list
 	Element Should Not Be Visible     		${todo_list}
 
-	# actions/steeps add a new task
+	# actions/steps add a new task
     FOR    ${number}    IN RANGE    20
-        Input new_task   						${task_1024_characters}
+        Input new_task   					${task_1024_characters}
     END
 
 	#asertions and validations
@@ -32,7 +29,7 @@ test case 1: create more than 20 task 1024 caracteres
 	Close Browser
 
 
-test case 2: validate edit fail
+test case 2: validate edit and fail task
 	Open Browser							${url_base}					chrome
 	Maximize Browser Window
 	#Preconditions have at least one task to edit
@@ -41,7 +38,7 @@ test case 2: validate edit fail
 	Element Should Not Be Visible     		${todo_list}
 	Input new_task   						${task_1}
 
-	#steeps
+	#steps
 	Double Click Element					${item_1}
 	Click Element  							${edit_item_1}
 	Double Click Element					${edit_item_1}
@@ -64,7 +61,7 @@ test case 3: Edit a task using only blanks
 	Element Should Not Be Visible     		${todo_list}
 	Input new_task   						${task_1}
 	
-	#actions/steeps: edit the task
+	#actions/steps: edit the task
 	Double Click Element					${item_1}
 	Click Element  							${edit_item_1}
 	Double Click Element					${edit_item_1}
@@ -90,7 +87,7 @@ test case 4: add a task using blanks
 	#Validate doesn't exist a previus to do list
 	Element Should Not Be Visible     		${todo_list}
 
-	# actions/steeps add a new task
+	# actions/steps add a new task
 	Input new_task   						${blanks} 
 
 	#asertions and validations
@@ -115,7 +112,7 @@ test case 5: create two task using special characters and code
 	Input new_task   						${nodejs_code}
 	Input new_task   						${special_charters} ${nodejs_code}
 
-	#actions/steeps
+	#actions/steps
 	Select Checkbox							${checkbox_task1} 
 
 	#assertions and validationes
