@@ -1,430 +1,1037 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1 (Python 3.11.5 on linux)" generated="20240114 19:36:46.509" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1 (Python 3.11.5 on linux)" generated="20240114 19:57:28.571" rpa="false" schemaversion="4">
 <suite id="s1" name="Tests" source="/opt/robotframework/tests">
 <suite id="s1-s1" name="Negative Test Cases" source="/opt/robotframework/tests/negative_test_cases.robot">
-<test id="s1-s1-t1" name="test case 1: create more than 20 task with 1024 characters" line="9">
+<test id="s1-s1-t1" name="test case 1: create more than 20 task with 1024 characters" line="7">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:46.623" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:47.126" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:47.127" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:46.622" endtime="20240114 19:36:47.129"/>
+<msg timestamp="20240114 19:57:28.688" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:57:28.687" endtime="20240114 19:57:30.575"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.129" endtime="20240114 19:36:47.129"/>
+<status status="PASS" starttime="20240114 19:57:30.575" endtime="20240114 19:57:30.728"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.129" endtime="20240114 19:36:47.129"/>
+<status status="PASS" starttime="20240114 19:57:30.729" endtime="20240114 19:57:30.790"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.129" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:30.808" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:57:30.790" endtime="20240114 19:57:30.809"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:30.821" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:57:30.809" endtime="20240114 19:57:30.821"/>
 </kw>
 <for flavor="IN RANGE">
 <var>${number}</var>
 <value>20</value>
 <iter>
-<var name="${number}"/>
+<var name="${number}">0</var>
 <kw name="Input new_task">
 <arg>${task_1024_characters}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:30.822" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:30.822" endtime="20240114 19:57:32.031"/>
 </kw>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:32.032" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:32.338" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:32.338" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:32.031" endtime="20240114 19:57:32.368"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:30.821" endtime="20240114 19:57:32.368"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:30.821" endtime="20240114 19:57:32.368"/>
 </iter>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<iter>
+<var name="${number}">1</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:32.369" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:32.368" endtime="20240114 19:57:33.427"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:33.428" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:33.722" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:33.722" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:33.427" endtime="20240114 19:57:33.731"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:32.368" endtime="20240114 19:57:33.731"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:32.368" endtime="20240114 19:57:33.731"/>
+</iter>
+<iter>
+<var name="${number}">2</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:33.732" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:33.732" endtime="20240114 19:57:34.850"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:34.851" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:35.139" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:35.139" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:34.850" endtime="20240114 19:57:35.147"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:33.732" endtime="20240114 19:57:35.147"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:33.731" endtime="20240114 19:57:35.147"/>
+</iter>
+<iter>
+<var name="${number}">3</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:35.148" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:35.147" endtime="20240114 19:57:36.223"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:36.224" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:36.506" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:36.506" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:36.223" endtime="20240114 19:57:36.514"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:35.147" endtime="20240114 19:57:36.514"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:35.147" endtime="20240114 19:57:36.514"/>
+</iter>
+<iter>
+<var name="${number}">4</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:36.515" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:36.514" endtime="20240114 19:57:37.571"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:37.572" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:37.872" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:37.872" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:37.571" endtime="20240114 19:57:37.880"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:36.514" endtime="20240114 19:57:37.880"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:36.514" endtime="20240114 19:57:37.880"/>
+</iter>
+<iter>
+<var name="${number}">5</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:37.881" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:37.881" endtime="20240114 19:57:38.950"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:38.951" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:39.239" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:39.239" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:38.951" endtime="20240114 19:57:39.247"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:37.880" endtime="20240114 19:57:39.247"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:37.880" endtime="20240114 19:57:39.247"/>
+</iter>
+<iter>
+<var name="${number}">6</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:39.248" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:39.248" endtime="20240114 19:57:40.383"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:40.384" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:40.673" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:40.673" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:40.383" endtime="20240114 19:57:40.681"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:39.248" endtime="20240114 19:57:40.681"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:39.247" endtime="20240114 19:57:40.681"/>
+</iter>
+<iter>
+<var name="${number}">7</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:40.682" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:40.682" endtime="20240114 19:57:41.721"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:41.722" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:42.023" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:42.023" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:41.721" endtime="20240114 19:57:42.031"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:40.681" endtime="20240114 19:57:42.031"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:40.681" endtime="20240114 19:57:42.031"/>
+</iter>
+<iter>
+<var name="${number}">8</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:42.032" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:42.031" endtime="20240114 19:57:43.116"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:43.116" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:43.406" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:43.406" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:43.116" endtime="20240114 19:57:43.414"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:42.031" endtime="20240114 19:57:43.414"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:42.031" endtime="20240114 19:57:43.414"/>
+</iter>
+<iter>
+<var name="${number}">9</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:43.415" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:43.414" endtime="20240114 19:57:44.535"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:44.536" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:44.826" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:44.826" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:44.536" endtime="20240114 19:57:44.835"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:43.414" endtime="20240114 19:57:44.836"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:43.414" endtime="20240114 19:57:44.836"/>
+</iter>
+<iter>
+<var name="${number}">10</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:44.837" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:44.836" endtime="20240114 19:57:45.918"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:45.919" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:46.209" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:46.209" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:45.918" endtime="20240114 19:57:46.217"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:44.836" endtime="20240114 19:57:46.217"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:44.836" endtime="20240114 19:57:46.217"/>
+</iter>
+<iter>
+<var name="${number}">11</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:46.218" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:46.218" endtime="20240114 19:57:47.305"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:47.306" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:47.602" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:47.602" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:47.305" endtime="20240114 19:57:47.610"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:46.217" endtime="20240114 19:57:47.610"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:46.217" endtime="20240114 19:57:47.610"/>
+</iter>
+<iter>
+<var name="${number}">12</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:47.611" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:47.610" endtime="20240114 19:57:48.671"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:48.671" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:48.955" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:48.955" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:48.671" endtime="20240114 19:57:48.963"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:47.610" endtime="20240114 19:57:48.963"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:47.610" endtime="20240114 19:57:48.963"/>
+</iter>
+<iter>
+<var name="${number}">13</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:48.963" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:48.963" endtime="20240114 19:57:50.041"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:50.042" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:50.323" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:50.323" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:50.041" endtime="20240114 19:57:50.331"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:48.963" endtime="20240114 19:57:50.331"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:48.963" endtime="20240114 19:57:50.331"/>
+</iter>
+<iter>
+<var name="${number}">14</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:50.332" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:50.332" endtime="20240114 19:57:51.546"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:51.548" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:51.839" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:51.839" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:51.547" endtime="20240114 19:57:51.848"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:50.331" endtime="20240114 19:57:51.848"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:50.331" endtime="20240114 19:57:51.848"/>
+</iter>
+<iter>
+<var name="${number}">15</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:51.848" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:51.848" endtime="20240114 19:57:52.943"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:52.944" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:53.222" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:53.222" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:52.943" endtime="20240114 19:57:53.240"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:51.848" endtime="20240114 19:57:53.240"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:51.848" endtime="20240114 19:57:53.240"/>
+</iter>
+<iter>
+<var name="${number}">16</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:53.241" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:53.240" endtime="20240114 19:57:54.343"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:54.344" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:54.622" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:54.622" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:54.343" endtime="20240114 19:57:54.630"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:53.240" endtime="20240114 19:57:54.630"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:53.240" endtime="20240114 19:57:54.630"/>
+</iter>
+<iter>
+<var name="${number}">17</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:54.631" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:54.631" endtime="20240114 19:57:55.762"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:55.763" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:56.055" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:56.055" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:55.762" endtime="20240114 19:57:56.064"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:54.630" endtime="20240114 19:57:56.064"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:54.630" endtime="20240114 19:57:56.064"/>
+</iter>
+<iter>
+<var name="${number}">18</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:56.065" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:56.065" endtime="20240114 19:57:57.136"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:57.136" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:57.422" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:57.422" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:57.136" endtime="20240114 19:57:57.430"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:56.064" endtime="20240114 19:57:57.430"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:56.064" endtime="20240114 19:57:57.430"/>
+</iter>
+<iter>
+<var name="${number}">19</var>
+<kw name="Input new_task">
+<arg>${task_1024_characters}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:57:57.430" level="INFO">Typing text 'Taking care of household chores is an integral part of maintaining a comfortable and organized living space. From scrubbing floors to doing laundry, each task contributes to the overall well-being of the home. Washing dishes may seem mundane, but it's a simple act that fosters cleanliness and order. Sweeping and dusting not only eliminate dirt but also create a refreshing atmosphere. Folding clothes becomes a meditative process, transforming chaos into neatness. Vacuuming carpets brings a sense of renewal, removing traces of daily life Cooking, while a daily necessity, can be a creative endeavor. The kitchen becomes a canvas, and the ingredients, the palette. It's a chance to experiment with flavors and nourish loved ones. Making the bed might seem like a small act, but it sets the tone for the entire bedroom, offering a sense of completion and comfort. Taking out the trash is not just about disposal; it's about letting go of unnecessary baggage, decluttering both the space and the mind In essence that is it' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:57.430" endtime="20240114 19:57:58.615"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:57:58.616" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:57:58.905" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:57:58.906" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:57:58.615" endtime="20240114 19:57:58.914"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:57.430" endtime="20240114 19:57:58.914"/>
+</kw>
+<status status="PASS" starttime="20240114 19:57:57.430" endtime="20240114 19:57:58.914"/>
+</iter>
+<status status="PASS" starttime="20240114 19:57:30.821" endtime="20240114 19:57:58.915"/>
 </for>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:58.947" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:57:58.915" endtime="20240114 19:57:58.947"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:58.975" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:57:58.948" endtime="20240114 19:57:58.975"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:59.326" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:57:58.976" endtime="20240114 19:57:59.326"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:59.327" level="INFO">Verifying checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input' is not selected.</msg>
+<status status="PASS" starttime="20240114 19:57:59.326" endtime="20240114 19:57:59.655"/>
 </kw>
 <kw name="Page Should Contain Button" library="SeleniumLibrary">
 <arg>${destroy_button_task1}</arg>
 <doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:59.867" level="INFO">Current page contains button 'xpath=/html/body/todo-app/section/section/ul/li/div/button'.</msg>
+<status status="PASS" starttime="20240114 19:57:59.655" endtime="20240114 19:57:59.867"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<msg timestamp="20240114 19:57:59.894" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:57:59.868" endtime="20240114 19:57:59.894"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.130" endtime="20240114 19:36:47.130"/>
+<status status="PASS" starttime="20240114 19:57:59.894" endtime="20240114 19:57:59.963"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:46.621" endtime="20240114 19:36:47.130">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:57:28.686" endtime="20240114 19:57:59.963"/>
 </test>
-<test id="s1-s1-t2" name="test case 2: validate edit and fail task" line="35">
+<test id="s1-s1-t2" name="test case 2: validate edit and fail task" line="32">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:47.131" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:47.632" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:47.633" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:47.131" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:57:59.965" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:57:59.964" endtime="20240114 19:58:01.739"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<status status="PASS" starttime="20240114 19:58:01.739" endtime="20240114 19:58:01.848"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<status status="PASS" starttime="20240114 19:58:01.848" endtime="20240114 19:58:02.287"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:02.301" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:02.287" endtime="20240114 19:58:02.301"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:02.311" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:02.301" endtime="20240114 19:58:02.311"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:02.312" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:02.312" endtime="20240114 19:58:02.398"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:02.398" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:02.681" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:02.681" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:02.398" endtime="20240114 19:58:02.697"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:02.311" endtime="20240114 19:58:02.697"/>
 </kw>
 <kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${item_1}</arg>
 <doc>Double clicks the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:02.697" level="INFO">Double clicking element 'xpath=/html/body/todo-app/section/section/ul/li/div/label'.</msg>
+<status status="PASS" starttime="20240114 19:58:02.697" endtime="20240114 19:58:02.993"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:02.993" level="INFO">Clicking element 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:02.993" endtime="20240114 19:58:03.056"/>
 </kw>
 <kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <doc>Double clicks the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:03.056" level="INFO">Double clicking element 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:03.056" endtime="20240114 19:58:03.335"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${None}</arg>
 <arg>DELETE</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:03.335" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg timestamp="20240114 19:58:03.335" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg timestamp="20240114 19:58:03.335" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20240114 19:58:03.335" endtime="20240114 19:58:03.344"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:03.344" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/section/ul/li/input element.</msg>
+<msg timestamp="20240114 19:58:03.620" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:03.620" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:03.344" endtime="20240114 19:58:03.629"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:03.640" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:03.630" endtime="20240114 19:58:03.640"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_2}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.634" endtime="20240114 19:36:47.634"/>
+<msg timestamp="20240114 19:58:03.666" level="INFO">Current page does not contain text 'Yoga session'.</msg>
+<status status="PASS" starttime="20240114 19:58:03.640" endtime="20240114 19:58:03.666"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.635" endtime="20240114 19:36:47.635"/>
+<msg timestamp="20240114 19:58:03.689" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:03.666" endtime="20240114 19:58:03.689"/>
 </kw>
 <kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.635" endtime="20240114 19:36:47.635"/>
+<msg timestamp="20240114 19:58:03.701" level="INFO">Current page does not contain checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:03.689" endtime="20240114 19:58:03.702"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:47.635" endtime="20240114 19:36:47.635"/>
+<status status="PASS" starttime="20240114 19:58:03.702" endtime="20240114 19:58:03.770"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:47.131" endtime="20240114 19:36:47.635">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:57:59.964" endtime="20240114 19:58:03.770"/>
 </test>
-<test id="s1-s1-t3" name="test case 3: Edit a task using only blanks" line="58">
+<test id="s1-s1-t3" name="test case 3: Edit a task using only blanks" line="55">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:47.636" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:48.137" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:48.137" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:47.635" endtime="20240114 19:36:48.137"/>
+<msg timestamp="20240114 19:58:03.772" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:03.771" endtime="20240114 19:58:05.048"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+<status status="PASS" starttime="20240114 19:58:05.048" endtime="20240114 19:58:05.157"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+<status status="PASS" starttime="20240114 19:58:05.157" endtime="20240114 19:58:05.421"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+<msg timestamp="20240114 19:58:05.436" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:05.421" endtime="20240114 19:58:05.436"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+<msg timestamp="20240114 19:58:05.448" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:05.436" endtime="20240114 19:58:05.448"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:48.138" endtime="20240114 19:36:48.138"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:05.448" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:05.448" endtime="20240114 19:58:05.540"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:05.541" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:05.821" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:05.821" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:05.540" endtime="20240114 19:58:05.836"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:05.448" endtime="20240114 19:58:05.837"/>
 </kw>
 <kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${item_1}</arg>
 <doc>Double clicks the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:05.837" level="INFO">Double clicking element 'xpath=/html/body/todo-app/section/section/ul/li/div/label'.</msg>
+<status status="PASS" starttime="20240114 19:58:05.837" endtime="20240114 19:58:06.120"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.120" level="INFO">Clicking element 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:06.120" endtime="20240114 19:58:06.185"/>
 </kw>
 <kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <doc>Double clicks the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.185" level="INFO">Double clicking element 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:06.185" endtime="20240114 19:58:06.463"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${None}</arg>
 <arg>DELETE</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.464" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg timestamp="20240114 19:58:06.464" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg timestamp="20240114 19:58:06.464" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20240114 19:58:06.464" endtime="20240114 19:58:06.472"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${None}</arg>
 <arg>SPACE</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.473" level="INFO">Sending key(s) ('SPACE',) to page.</msg>
+<msg timestamp="20240114 19:58:06.473" level="INFO">Pressing special key SPACE to browser.</msg>
+<msg timestamp="20240114 19:58:06.473" level="INFO">Releasing special key SPACE.</msg>
+<status status="PASS" starttime="20240114 19:58:06.472" endtime="20240114 19:58:06.480"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.481" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/section/ul/li/input element.</msg>
+<msg timestamp="20240114 19:58:06.755" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:06.755" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:06.480" endtime="20240114 19:58:06.765"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_2}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.790" level="INFO">Current page does not contain text 'Yoga session'.</msg>
+<status status="PASS" starttime="20240114 19:58:06.765" endtime="20240114 19:58:06.790"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.139" endtime="20240114 19:36:48.139"/>
+<msg timestamp="20240114 19:58:06.811" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:06.790" endtime="20240114 19:58:06.811"/>
 </kw>
 <kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+<msg timestamp="20240114 19:58:06.823" level="INFO">Current page does not contain checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:06.811" endtime="20240114 19:58:06.823"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+<msg timestamp="20240114 19:58:06.831" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:06.823" endtime="20240114 19:58:06.831"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+<msg timestamp="20240114 19:58:11.832" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240114 19:58:06.831" endtime="20240114 19:58:11.832"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.140"/>
+<status status="PASS" starttime="20240114 19:58:11.832" endtime="20240114 19:58:11.902"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:47.635" endtime="20240114 19:36:48.140">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:03.771" endtime="20240114 19:58:11.902"/>
 </test>
-<test id="s1-s1-t4" name="test case 4: add a task using blanks" line="84">
+<test id="s1-s1-t4" name="test case 4: add a task using blanks" line="81">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:48.141" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:48.642" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:48.642" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.643"/>
+<msg timestamp="20240114 19:58:11.904" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:11.903" endtime="20240114 19:58:13.665"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+<status status="PASS" starttime="20240114 19:58:13.665" endtime="20240114 19:58:13.815"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+<status status="PASS" starttime="20240114 19:58:13.816" endtime="20240114 19:58:13.833"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+<msg timestamp="20240114 19:58:13.849" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:13.833" endtime="20240114 19:58:13.850"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+<msg timestamp="20240114 19:58:13.862" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:13.850" endtime="20240114 19:58:13.862"/>
 </kw>
 <kw name="Input new_task">
 <arg>${blanks}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:13.863" level="INFO">Typing text '" "' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:13.863" endtime="20240114 19:58:13.954"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:13.955" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:14.237" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:14.237" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:13.954" endtime="20240114 19:58:14.253"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:13.862" endtime="20240114 19:58:14.253"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.643"/>
+<msg timestamp="20240114 19:58:14.279" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:14.253" endtime="20240114 19:58:14.279"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.643" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.305" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:14.279" endtime="20240114 19:58:14.305"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.341" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:14.305" endtime="20240114 19:58:14.341"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.341" level="INFO">Verifying checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input' is not selected.</msg>
+<status status="PASS" starttime="20240114 19:58:14.341" endtime="20240114 19:58:14.378"/>
 </kw>
 <kw name="Page Should Contain Button" library="SeleniumLibrary">
 <arg>${destroy_button_task1}</arg>
 <doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.409" level="INFO">Current page contains button 'xpath=/html/body/todo-app/section/section/ul/li/div/button'.</msg>
+<status status="PASS" starttime="20240114 19:58:14.378" endtime="20240114 19:58:14.409"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.433" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:14.409" endtime="20240114 19:58:14.433"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${todo_account_item1_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.448" level="INFO">Current page contains text '1 item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:14.433" endtime="20240114 19:58:14.448"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${todo_account_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<msg timestamp="20240114 19:58:14.462" level="INFO">Current page contains text 'item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:14.448" endtime="20240114 19:58:14.462"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:48.644" endtime="20240114 19:36:48.644"/>
+<status status="PASS" starttime="20240114 19:58:14.462" endtime="20240114 19:58:14.529"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:48.140" endtime="20240114 19:36:48.644">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:11.903" endtime="20240114 19:58:14.529"/>
 </test>
-<test id="s1-s1-t5" name="test case 5: create two task using special characters and code" line="107">
+<test id="s1-s1-t5" name="test case 5: create two task using special characters and code" line="104">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:48.645" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:49.146" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:49.146" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:48.645" endtime="20240114 19:36:49.147"/>
+<msg timestamp="20240114 19:58:14.530" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:14.529" endtime="20240114 19:58:15.786"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<status status="PASS" starttime="20240114 19:58:15.786" endtime="20240114 19:58:15.895"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<status status="PASS" starttime="20240114 19:58:15.895" endtime="20240114 19:58:15.948"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<msg timestamp="20240114 19:58:15.972" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:15.949" endtime="20240114 19:58:15.972"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<msg timestamp="20240114 19:58:15.984" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:15.972" endtime="20240114 19:58:15.984"/>
 </kw>
 <kw name="Input new_task">
 <arg>${special_charters}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:15.985" level="INFO">Typing text '|°¬!|""#$%&amp;/()=¬/' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:15.984" endtime="20240114 19:58:16.095"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:16.096" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:16.370" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:16.370" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:16.095" endtime="20240114 19:58:16.384"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:15.984" endtime="20240114 19:58:16.384"/>
 </kw>
 <kw name="Input new_task">
 <arg>${nodejs_code}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:16.385" level="INFO">Typing text 'console.log("test")' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:16.384" endtime="20240114 19:58:16.464"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:16.464" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:16.737" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:16.737" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:16.464" endtime="20240114 19:58:16.745"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:16.384" endtime="20240114 19:58:16.745"/>
 </kw>
 <kw name="Input new_task">
 <arg>${special_charters} ${nodejs_code}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:16.746" level="INFO">Typing text '|°¬!|""#$%&amp;/()=¬/ console.log("test")' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:16.745" endtime="20240114 19:58:16.846"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:16.847" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:17.124" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:17.124" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:16.846" endtime="20240114 19:58:17.131"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:16.745" endtime="20240114 19:58:17.131"/>
 </kw>
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.147" endtime="20240114 19:36:49.147"/>
+<msg timestamp="20240114 19:58:17.132" level="INFO">Selecting checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:17.131" endtime="20240114 19:58:17.241"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+<msg timestamp="20240114 19:58:17.262" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:17.241" endtime="20240114 19:58:17.262"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${special_charters} ${nodejs_code}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+<msg timestamp="20240114 19:58:17.277" level="INFO">Current page contains text '|°¬!|""#$%&amp;/()=¬/ console.log("test")'.</msg>
+<status status="PASS" starttime="20240114 19:58:17.262" endtime="20240114 19:58:17.277"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+<msg timestamp="20240114 19:58:17.324" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:17.277" endtime="20240114 19:58:17.324"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+<msg timestamp="20240114 19:58:17.347" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:17.324" endtime="20240114 19:58:17.347"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.148" endtime="20240114 19:36:49.148"/>
+<status status="PASS" starttime="20240114 19:58:17.347" endtime="20240114 19:58:17.418"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:48.644" endtime="20240114 19:36:49.148">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:14.529" endtime="20240114 19:58:17.419"/>
 </test>
-<status status="FAIL" starttime="20240114 19:36:46.522" endtime="20240114 19:36:49.148"/>
+<status status="PASS" starttime="20240114 19:57:28.584" endtime="20240114 19:58:17.419"/>
 </suite>
 <suite id="s1-s2" name="Positive Test Cases" source="/opt/robotframework/tests/positive_test_cases.robot">
 <test id="s1-s2-t1" name="test case 1: create a new task" line="7">
@@ -432,468 +1039,607 @@
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:49.152" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:49.653" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:49.653" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:49.151" endtime="20240114 19:36:49.654"/>
+<msg timestamp="20240114 19:58:17.422" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:17.422" endtime="20240114 19:58:18.677"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+<status status="PASS" starttime="20240114 19:58:18.677" endtime="20240114 19:58:18.786"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+<status status="PASS" starttime="20240114 19:58:18.786" endtime="20240114 19:58:18.846"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+<msg timestamp="20240114 19:58:18.864" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:18.846" endtime="20240114 19:58:18.864"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+<msg timestamp="20240114 19:58:18.876" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:18.864" endtime="20240114 19:58:18.876"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.654"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:18.877" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:18.877" endtime="20240114 19:58:18.978"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:18.979" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:19.255" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:19.255" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:18.979" endtime="20240114 19:58:19.271"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:18.877" endtime="20240114 19:58:19.272"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.654" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.298" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:19.272" endtime="20240114 19:58:19.298"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.314" level="INFO">Current page contains text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:19.298" endtime="20240114 19:58:19.314"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.349" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:19.314" endtime="20240114 19:58:19.349"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.350" level="INFO">Verifying checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input' is not selected.</msg>
+<status status="PASS" starttime="20240114 19:58:19.349" endtime="20240114 19:58:19.392"/>
 </kw>
 <kw name="Page Should Contain Button" library="SeleniumLibrary">
 <arg>${destroy_button_task1}</arg>
 <doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.430" level="INFO">Current page contains button 'xpath=/html/body/todo-app/section/section/ul/li/div/button'.</msg>
+<status status="PASS" starttime="20240114 19:58:19.392" endtime="20240114 19:58:19.430"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.458" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:19.430" endtime="20240114 19:58:19.458"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${todo_account_item1_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.475" level="INFO">Current page contains text '1 item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:19.458" endtime="20240114 19:58:19.475"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${todo_account_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<msg timestamp="20240114 19:58:19.490" level="INFO">Current page contains text 'item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:19.475" endtime="20240114 19:58:19.490"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:49.655" endtime="20240114 19:36:49.655"/>
+<status status="PASS" starttime="20240114 19:58:19.490" endtime="20240114 19:58:19.557"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:49.151" endtime="20240114 19:36:49.655">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:17.421" endtime="20240114 19:58:19.557"/>
 </test>
 <test id="s1-s2-t2" name="test case 2: Edit a task" line="32">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:49.656" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:50.157" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:50.157" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:49.656" endtime="20240114 19:36:50.158"/>
+<msg timestamp="20240114 19:58:19.558" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:19.558" endtime="20240114 19:58:20.825"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.158" endtime="20240114 19:36:50.158"/>
+<status status="PASS" starttime="20240114 19:58:20.825" endtime="20240114 19:58:20.938"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.158" endtime="20240114 19:36:50.158"/>
+<status status="PASS" starttime="20240114 19:58:20.938" endtime="20240114 19:58:20.996"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:21.014" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:20.996" endtime="20240114 19:58:21.014"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:21.027" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:21.014" endtime="20240114 19:58:21.027"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:21.028" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:21.028" endtime="20240114 19:58:21.123"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:21.124" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:21.404" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:21.404" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:21.124" endtime="20240114 19:58:21.422"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:21.027" endtime="20240114 19:58:21.422"/>
 </kw>
 <kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${item_1}</arg>
 <doc>Double clicks the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:21.423" level="INFO">Double clicking element 'xpath=/html/body/todo-app/section/section/ul/li/div/label'.</msg>
+<status status="PASS" starttime="20240114 19:58:21.422" endtime="20240114 19:58:21.703"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:21.703" level="INFO">Clicking element 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:21.703" endtime="20240114 19:58:21.761"/>
 </kw>
 <kw name="Double Click Element" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <doc>Double clicks the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:21.762" level="INFO">Double clicking element 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:21.761" endtime="20240114 19:58:22.037"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${None}</arg>
 <arg>DELETE</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.038" level="INFO">Sending key(s) ('DELETE',) to page.</msg>
+<msg timestamp="20240114 19:58:22.038" level="INFO">Pressing special key DELETE to browser.</msg>
+<msg timestamp="20240114 19:58:22.038" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20240114 19:58:22.038" endtime="20240114 19:58:22.046"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <arg>${task_2}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.047" level="INFO">Typing text 'Yoga session' into text field 'xpath=/html/body/todo-app/section/section/ul/li/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:22.046" endtime="20240114 19:58:22.113"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${edit_item_1}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.114" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/section/ul/li/input element.</msg>
+<msg timestamp="20240114 19:58:22.386" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:22.386" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:22.113" endtime="20240114 19:58:22.395"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${task_2}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.411" level="INFO">Current page contains text 'Yoga session'.</msg>
+<status status="PASS" starttime="20240114 19:58:22.396" endtime="20240114 19:58:22.411"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.435" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:22.411" endtime="20240114 19:58:22.435"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.469" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:22.435" endtime="20240114 19:58:22.469"/>
 </kw>
 <kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.470" level="INFO">Verifying checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input' is not selected.</msg>
+<status status="PASS" starttime="20240114 19:58:22.470" endtime="20240114 19:58:22.509"/>
 </kw>
 <kw name="Page Should Contain Button" library="SeleniumLibrary">
 <arg>${destroy_button_task1}</arg>
 <doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.546" level="INFO">Current page contains button 'xpath=/html/body/todo-app/section/section/ul/li/div/button'.</msg>
+<status status="PASS" starttime="20240114 19:58:22.509" endtime="20240114 19:58:22.546"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<msg timestamp="20240114 19:58:22.574" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:22.546" endtime="20240114 19:58:22.574"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.159" endtime="20240114 19:36:50.159"/>
+<status status="PASS" starttime="20240114 19:58:22.574" endtime="20240114 19:58:22.640"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:49.655" endtime="20240114 19:36:50.160">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:19.557" endtime="20240114 19:58:22.641"/>
 </test>
-<test id="s1-s2-t3" name="test case 3: check item or task mark like done" line="59">
+<test id="s1-s2-t3" name="test case 3: check item or task and mark done" line="59">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:50.161" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:50.662" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:50.662" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:50.160" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:22.643" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:22.642" endtime="20240114 19:58:23.897"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<status status="PASS" starttime="20240114 19:58:23.897" endtime="20240114 19:58:24.012"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<status status="PASS" starttime="20240114 19:58:24.012" endtime="20240114 19:58:24.277"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:24.292" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.277" endtime="20240114 19:58:24.292"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:24.305" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:24.292" endtime="20240114 19:58:24.305"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:24.305" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.305" endtime="20240114 19:58:24.390"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:24.391" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:24.670" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:24.670" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:24.390" endtime="20240114 19:58:24.685"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:24.305" endtime="20240114 19:58:24.685"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:24.712" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:24.685" endtime="20240114 19:58:24.712"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:24.728" level="INFO">Current page contains text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.712" endtime="20240114 19:58:24.728"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:24.763" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.729" endtime="20240114 19:58:24.763"/>
 </kw>
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.663" endtime="20240114 19:36:50.663"/>
+<msg timestamp="20240114 19:58:24.764" level="INFO">Selecting checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.763" endtime="20240114 19:58:24.853"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:24.878" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.853" endtime="20240114 19:58:24.878"/>
 </kw>
 <kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:24.878" level="INFO">Verifying checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input' is selected.</msg>
+<status status="PASS" starttime="20240114 19:58:24.878" endtime="20240114 19:58:24.908"/>
 </kw>
 <kw name="Page Should Contain Button" library="SeleniumLibrary">
 <arg>${destroy_button_task1}</arg>
 <doc>Verifies button ``locator`` is found from current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:24.941" level="INFO">Current page contains button 'xpath=/html/body/todo-app/section/section/ul/li/div/button'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.908" endtime="20240114 19:58:24.941"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:24.968" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:24.941" endtime="20240114 19:58:24.968"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${clean_completed_button}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:24.994" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/button' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:24.968" endtime="20240114 19:58:24.994"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${todo_account_text}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:25.023" level="INFO">Current page does not contain text 'item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:24.994" endtime="20240114 19:58:25.023"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:25.045" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:25.023" endtime="20240114 19:58:25.045"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${todo_account_item1_text}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<msg timestamp="20240114 19:58:25.069" level="INFO">Current page does not contain text '1 item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:25.045" endtime="20240114 19:58:25.069"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:50.664" endtime="20240114 19:36:50.664"/>
+<status status="PASS" starttime="20240114 19:58:25.069" endtime="20240114 19:58:25.136"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:50.160" endtime="20240114 19:36:50.664">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:22.641" endtime="20240114 19:58:25.136"/>
 </test>
-<test id="s1-s2-t4" name="test case 4: delete a task" line="85">
+<test id="s1-s2-t4" name="test case 4: delete a task" line="86">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:50.665" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:51.166" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:51.166" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:50.665" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:25.137" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:25.137" endtime="20240114 19:58:26.410"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<status status="PASS" starttime="20240114 19:58:26.410" endtime="20240114 19:58:26.521"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<status status="PASS" starttime="20240114 19:58:26.521" endtime="20240114 19:58:26.780"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:26.794" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:26.780" endtime="20240114 19:58:26.794"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:26.806" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:26.794" endtime="20240114 19:58:26.806"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:26.807" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:26.806" endtime="20240114 19:58:26.902"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:26.903" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:27.187" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:27.187" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:26.902" endtime="20240114 19:58:27.202"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:26.806" endtime="20240114 19:58:27.202"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:27.202" level="INFO">Simulating Mouse Over on element 'xpath=/html/body/todo-app/section/section/ul'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.202" endtime="20240114 19:58:27.473"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${destroy_button_task1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:27.474" level="INFO">Clicking element 'xpath=/html/body/todo-app/section/section/ul/li/div/button'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.473" endtime="20240114 19:58:27.528"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:27.537" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:27.528" endtime="20240114 19:58:27.537"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.167" endtime="20240114 19:36:51.167"/>
+<msg timestamp="20240114 19:58:27.563" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.537" endtime="20240114 19:58:27.563"/>
 </kw>
 <kw name="Page Should Not Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is not found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+<msg timestamp="20240114 19:58:27.575" level="INFO">Current page does not contain checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.563" endtime="20240114 19:58:27.575"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+<msg timestamp="20240114 19:58:27.588" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:27.575" endtime="20240114 19:58:27.589"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${todo_account_item1_text}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+<msg timestamp="20240114 19:58:27.611" level="INFO">Current page does not contain text '1 item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.589" endtime="20240114 19:58:27.611"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${todo_account_text}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+<msg timestamp="20240114 19:58:27.633" level="INFO">Current page does not contain text 'item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.611" endtime="20240114 19:58:27.633"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.168"/>
+<status status="PASS" starttime="20240114 19:58:27.634" endtime="20240114 19:58:27.700"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:50.664" endtime="20240114 19:36:51.168">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:25.137" endtime="20240114 19:58:27.701"/>
 </test>
-<test id="s1-s2-t5" name="test case 5: create two task and complete just one and clean completed task" line="108">
+<test id="s1-s2-t5" name="test case 5: create two task and complete just one and clean completed task" line="109">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url_base}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240114 19:36:51.170" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
-<msg timestamp="20240114 19:36:51.671" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20240114 19:36:51.671" level="FAIL">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</msg>
-<status status="FAIL" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:27.702" level="INFO">Opening browser 'chrome' to base url 'https://todomvc.com/examples/angular2/'.</msg>
+<status status="PASS" starttime="20240114 19:58:27.702" endtime="20240114 19:58:28.959"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<status status="PASS" starttime="20240114 19:58:28.959" endtime="20240114 19:58:29.071"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${input_field}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<status status="PASS" starttime="20240114 19:58:29.071" endtime="20240114 19:58:29.129"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${page_header_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:29.144" level="INFO">Current page contains text 'todos'.</msg>
+<status status="PASS" starttime="20240114 19:58:29.129" endtime="20240114 19:58:29.144"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:29.155" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' did not exist.</msg>
+<status status="PASS" starttime="20240114 19:58:29.144" endtime="20240114 19:58:29.155"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_1}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:29.156" level="INFO">Typing text 'Exercise' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:29.155" endtime="20240114 19:58:29.245"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:29.246" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:29.519" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:29.519" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:29.245" endtime="20240114 19:58:29.535"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:29.155" endtime="20240114 19:58:29.535"/>
 </kw>
 <kw name="Input new_task">
 <arg>${task_2}</arg>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>${task_1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 19:58:29.536" level="INFO">Typing text 'Yoga session' into text field 'xpath=/html/body/todo-app/section/header/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:29.535" endtime="20240114 19:58:29.615"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${input_field}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 19:58:29.615" level="INFO">Sending key(s) ('ENTER',) to xpath=/html/body/todo-app/section/header/input element.</msg>
+<msg timestamp="20240114 19:58:29.903" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20240114 19:58:29.903" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20240114 19:58:29.615" endtime="20240114 19:58:29.913"/>
+</kw>
+<status status="PASS" starttime="20240114 19:58:29.535" endtime="20240114 19:58:29.913"/>
 </kw>
 <kw name="Select Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:29.914" level="INFO">Selecting checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:29.913" endtime="20240114 19:58:30.030"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${clean_completed_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:30.030" level="INFO">Clicking element 'xpath=/html/body/todo-app/section/footer/button'.</msg>
+<status status="PASS" starttime="20240114 19:58:30.030" endtime="20240114 19:58:30.082"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_list}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:30.107" level="INFO">Element 'xpath=/html/body/todo-app/section/section/ul' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:30.082" endtime="20240114 19:58:30.107"/>
 </kw>
 <kw name="Page Should Not Contain" library="SeleniumLibrary">
 <arg>${task_1}</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:30.133" level="INFO">Current page does not contain text 'Exercise'.</msg>
+<status status="PASS" starttime="20240114 19:58:30.107" endtime="20240114 19:58:30.133"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${task_2}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.672" endtime="20240114 19:36:51.672"/>
+<msg timestamp="20240114 19:58:30.148" level="INFO">Current page contains text 'Yoga session'.</msg>
+<status status="PASS" starttime="20240114 19:58:30.133" endtime="20240114 19:58:30.148"/>
 </kw>
 <kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
 <arg>${checkbox_task1}</arg>
 <doc>Verifies checkbox ``locator`` is found from the current page.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+<msg timestamp="20240114 19:58:30.178" level="INFO">Current page contains checkbox 'xpath=/html/body/todo-app/section/section/ul/li/div/input'.</msg>
+<status status="PASS" starttime="20240114 19:58:30.148" endtime="20240114 19:58:30.178"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <arg>${todo_count}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+<msg timestamp="20240114 19:58:30.207" level="INFO">Element 'xpath=/html/body/todo-app/section/footer/span' is displayed.</msg>
+<status status="PASS" starttime="20240114 19:58:30.178" endtime="20240114 19:58:30.207"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${todo_account_item1_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+<msg timestamp="20240114 19:58:30.222" level="INFO">Current page contains text '1 item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:30.207" endtime="20240114 19:58:30.223"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${todo_account_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240114 19:36:51.673" endtime="20240114 19:36:51.673"/>
+<msg timestamp="20240114 19:58:30.238" level="INFO">Current page contains text 'item left'.</msg>
+<status status="PASS" starttime="20240114 19:58:30.223" endtime="20240114 19:58:30.238"/>
 </kw>
-<status status="FAIL" starttime="20240114 19:36:51.168" endtime="20240114 19:36:51.673">WebDriverException: Message: Service /opt/robotframework/bin/chromedriver unexpectedly exited. Status code was: 1
-</status>
+<status status="PASS" starttime="20240114 19:58:27.701" endtime="20240114 19:58:30.238"/>
 </test>
-<status status="FAIL" starttime="20240114 19:36:49.149" endtime="20240114 19:36:51.673"/>
+<status status="PASS" starttime="20240114 19:58:17.420" endtime="20240114 19:58:30.239"/>
 </suite>
-<status status="FAIL" starttime="20240114 19:36:46.509" endtime="20240114 19:36:51.674"/>
+<status status="PASS" starttime="20240114 19:57:28.571" endtime="20240114 19:58:30.239"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="10" skip="0">All Tests</stat>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="10" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="0" fail="5" skip="0" id="s1-s1" name="Negative Test Cases">Tests.Negative Test Cases</stat>
-<stat pass="0" fail="5" skip="0" id="s1-s2" name="Positive Test Cases">Tests.Positive Test Cases</stat>
+<stat pass="10" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s1" name="Negative Test Cases">Tests.Negative Test Cases</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s2" name="Positive Test Cases">Tests.Positive Test Cases</stat>
 </suite>
 </statistics>
 <errors>
