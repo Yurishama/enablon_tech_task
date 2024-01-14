@@ -32,6 +32,29 @@ test case 1: create more than 20 task 1024 caracteres
 	Close Browser
 
 
+test case 2: validate edit fail
+	Open Browser							${url_base}					chrome
+	Maximize Browser Window
+	#Preconditions have at least one task to edit
+	Wait Until Page Contains Element     	${input_field}
+	Page Should Contain						${page_header_text}
+	Element Should Not Be Visible     		${todo_list}
+	Input new_task   						${task_1}
+
+	#steeps
+	Double Click Element					${item_1}
+	Click Element  							${edit_item_1}
+	Double Click Element					${edit_item_1}
+	Press Keys								${None}							DELETE
+	Press Keys   							${edit_item_1}   				ENTER
+
+	#Validations/assertions
+	Element Should Not Be Visible     		${todo_list}
+	Page Should Not Contain					${task_2}
+	Page Should Not Contain					${task_1}
+	Page Should Not Contain Checkbox		${checkbox_task1} 
+	Close Browser
+
 #This keywords operates as a function. 
 #I've created a function to input task for example. 
 # I believe that incorporating functions in your tests can enhance the clarity of your code
